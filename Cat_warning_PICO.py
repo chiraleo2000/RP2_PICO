@@ -5,13 +5,13 @@
 from machine import Pin 
 import utime 
 led_onboard = Pin(25, Pin.OUT) # for testing Raspberry pi PICO board
-led_1 = Pin(1, Pin.OUT) # Input mode
-led_2 = Pin(2, Pin.OUT) #Input mode
-led_3 = Pin(3, Pin.OUT) # Input mode
-buzz1 = Pin(10, Pin.OUT) # Input mode
-buzz2 = Pin(11, Pin.OUT) # Input mode
-PIR1 = Pin(16, Pin.IN, Pin.PULL_UP) # Output mode
-PIR2 = Pin(17, Pin.IN, Pin.PULL_UP) # Output mode
+led_1 = Pin( _ , Pin.OUT) # Input mode (Configurate your Pins in integrate number)
+led_2 = Pin( _ , Pin.OUT) #Input mode (Configurate your Pins in integrate number)
+led_3 = Pin( _ , Pin.OUT) # Input mode (Configurate your Pins in integrate number)
+buzz1 = Pin( _ , Pin.OUT) # Input mode (Configurate your Pins in integrate number)
+buzz2 = Pin( _ , Pin.OUT) # Input mode (Configurate your Pins in integrate number)
+PIR1 = Pin( _ , Pin.IN, Pin.PULL_UP) # Output mode (Configurate your Pins in integrate number)
+PIR2 = Pin( _ , Pin.IN, Pin.PULL_UP) # Output mode (Configurate your Pins in integrate number)
 # Equipvalent to viod loop()
 while True:
     print(PIR1.value(), PIR2.value()) # For testing and setting PIRs 
