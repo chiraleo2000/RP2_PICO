@@ -1,3 +1,8 @@
+# This is for cytron Making IO RP2040 board only.
+# Using List to contain the setting pin properties.
+# And also for setting a pattern of output value.
+# Using Multithread for another task. 
+# In this case is play buzzer while letting another core to play LEDs.
 from machine import Pin
 import utime , _thread
 leds = [
