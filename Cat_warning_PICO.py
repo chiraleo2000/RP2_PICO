@@ -14,9 +14,9 @@ PIR1 = Pin( _ , Pin.IN, Pin.PULL_UP) # Output mode (Configurate your Pins in int
 PIR2 = Pin( _ , Pin.IN, Pin.PULL_UP) # Output mode (Configurate your Pins in integrate number)
 # Equipvalent to viod loop()
 while True:
-    print(PIR1.value(), PIR2.value()) # For testing and setting PIRs 
-		if PIR1.value() == 1 and PIR2.value() == 0:
-        led_1.value(1)
+	print(PIR1.value(), PIR2.value()) # For testing and setting PIRs 
+	if PIR1.value() == 1 and PIR2.value() == 0:
+		led_1.value(1)
         led_2.value(0)
         buzz1.value(1)
         buzz2.value(0)
