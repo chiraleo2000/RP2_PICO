@@ -1,4 +1,4 @@
-#This is for testing ADC (Analog to Digital Convertor) in PICO.
+# This is for testing ADC (Analog to Digital Convertor) in PICO.
 # Using ADC library from machine to setting pin to accept ADC.
 # Only specific pins can configurate to ADC pin and for Input only.
 from machine import Pin, ADC
