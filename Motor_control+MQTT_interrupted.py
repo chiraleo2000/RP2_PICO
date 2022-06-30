@@ -1,4 +1,4 @@
-from machine import Pin, ADC, PWM, UART, I2C
+from machine import Pin, PWM, UART, I2C
 from ssd1306 import SSD1306_I2C
 import utime, _thread, re
 
@@ -133,7 +133,7 @@ def MQTT_Call(word):
             uart0.write("At home")
             
     elif word == "help":
-        uart0.write("There are three call function available\r\n")
+        uart0.write("There are three call-functions available\r\n")
         uart0.write("[('home') ('right, number_of_step')  ('left, number_of_step')]\r\n")
         print("There are three call function available\r\n ")
         print("[('home') ('right, number_of_step')  ('left, number_of_step')]\r\n")
