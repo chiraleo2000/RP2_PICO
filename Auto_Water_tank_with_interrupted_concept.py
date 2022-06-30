@@ -20,7 +20,7 @@ def ultra():
     trigger.low()
     utime.sleep_us(10)
     trigger.high()
-    utime.sleep_us(10)
+    utime.sleep_us(30)
     trigger.low()
     while echo.value() == 0:
         signaloff = utime.ticks_us()
@@ -31,13 +31,12 @@ def ultra():
     return distance
 
 def height():
-    measure_1 = ultra()
-    utime.sleep_us(10)
-    measure_2 = ultra()
-    utime.sleep_us(10)
-    measure_3 = ultra()
-    utime.sleep_us(10)
-    avg = (measure_1 + measure_2 + measure_3) / 3
+    lists = []
+    for i in range (5):
+        x = ultra()
+        utime.sleep_us(10)
+        lists.append(x)
+    avg = sum(lists[:])/(len(lists))
     return avg
 # for display on OLED need _thread
 def report(h,status,delay):
@@ -125,9 +124,10 @@ def case(x,y,z):
         uart0.write("error")
         utime.sleep(0.7)
     _thread.start_new_thread(report,(height(), status,0.1))
-    
+
+waterlevel = lambda a,b: b - a 
 #water_low.irq(trigger=Pin.IRQ_RISING, handler=lowest)
 #water_high.irq(trigger=Pin.IRQ_FALLING, handler=highest)
 while True:
     case(water_high.value(), water_low.value(), water_release())
-    uart0.write("water level: "+ str(400 - height()) + " cm ")
+    uart0.write("water level: "+ str(waterlevel(height(),400)) + " cm ")
